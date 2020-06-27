@@ -1,29 +1,37 @@
 <template>
-  <div id="app" class="container mx-auto">
-    <div class="py-16">
-      <h1 class="text-4xl font-bold text-red-600">Bingo Aniversare Liga AC!</h1>
-      <p>Reguli: Trimite screenshot pe <a class="font-bold underline" href="https://www.facebook.com/groups/ligaac/">grupul de Facebook</a> când ai marcat 3 în linie/diagonală.</p>
-    </div>
-    <section class="grid grid-cols-3 col-gap-4 row-gap-4">
-      <bingo-item 
-        v-for="item of bingo"
-        :key="item.id"
-        :id="item.id"
-        :label="item.label"
-        :marked="item.marked"
-        @mark="mark(item.id)"
-      ></bingo-item>
-    </section>
+  <div id="app" class="w-full h-screen">
+    <main class="container flex flex-col h-full mx-auto">
+      <div class="py-16 w-full">
+        <h1 class="text-4xl font-bold text-red-600">Bingo Aniversare Liga AC!</h1>
+        <p>Reguli: Trimite screenshot pe <a class="font-bold underline" href="https://www.facebook.com/groups/ligaac/">grupul de Facebook</a> când ai marcat 3 în linie/diagonală.</p>
+      </div>
+      <section class="w-full">
+        <div class="grid grid-cols-3 col-gap-4 row-gap-4">
+          <bingo-item 
+            class="col-span-1"
+            v-for="item of bingo"
+            :key="item.id"
+            :id="item.id"
+            :label="item.label"
+            :marked="item.marked"
+            @mark="mark(item.id)"
+          ></bingo-item>
+        </div>
+      </section>
+    </main>
+    <the-footer></the-footer>
   </div>
 </template>
 
 <script>
 import BingoItem from './components/BingoItem'
+import TheFooter from './components/TheFooter'
 
 export default {
   name: 'App',
   components: {
-    BingoItem
+    BingoItem,
+    TheFooter
   },
   data() {
     return {
