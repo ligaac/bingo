@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
-    <h1>Bingo</h1>
-    <section class="bingo-grid">
+  <div id="app" class="container mx-auto">
+    <div class="py-16">
+      <h1 class="text-4xl font-bold text-red-600">Bingo Aniversare Liga AC!</h1>
+      <p>Reguli: Trimite screenshot pe <a class="font-bold underline" href="https://www.facebook.com/groups/ligaac/">grupul de Facebook</a> când ai marcat 3 în linie/diagonală.</p>
+    </div>
+    <section class="grid grid-cols-3 col-gap-4 row-gap-4">
       <bingo-item 
         v-for="item of bingo"
         :key="item.id"
@@ -25,15 +28,15 @@ export default {
   data() {
     return {
       bingo: [
-        { label: 'la multi ani liga ac', id: 1, marked: false },
+        { label: 'La multi ani Liga AC!', id: 1, marked: false },
         { label: 'Nopți nedormite', id: 2, marked: false },
-        { label: 'Upara', id: 3, marked: false },
+        { label: 'Upară', id: 3, marked: false },
         { label: 'Cineva se emoționează', id: 4, marked: false },
         { label: 'Ședințe până dimineața', id: 5, marked: false },
-        { label: 'liga ac este o familie', id: 6, marked: false },
-        { label: 'nu m-am gândit ce sa zic', id: 7, marked: false },
-        { label: 'să ne vedem la un ceai', id: 8, marked: false },
-        { label: 'la multi ani liga ac', id: 9, marked: false },
+        { label: 'Liga AC este o familie!', id: 6, marked: false },
+        { label: 'Nu m-am gândit ce sa zic...', id: 7, marked: false },
+        { label: 'Să ne vedem la ceai!', id: 8, marked: false },
+        { label: 'Se face mișto de Ciobo', id: 9, marked: false },
       ]
     }
   },
