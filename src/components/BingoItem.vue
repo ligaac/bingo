@@ -15,8 +15,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 button {
-  height: 10em;
+  @apply py-16 bg-gray-200 rounded transition duration-300 font-bold text-gray-800;
+}
+
+button:hover {
+  @apply shadow-lg;
+}
+
+button:disabled {
+  @apply bg-gray-100 text-gray-500 line-through;
 }
 </style>
